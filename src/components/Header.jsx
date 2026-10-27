@@ -74,7 +74,11 @@ export default function Header() {
         aria-label="Gataria — página inicial"
         onClick={closeMenu}
       >
-        <img className={styles.logoIcon} src="/favicon.svg" alt="" />
+        <img
+          className={styles.logoIcon}
+          src={`${import.meta.env.BASE_URL}favicon.svg`}
+          alt=""
+        />
         <span className={styles.logoText}>
           gataria<span className={styles.logoDot}>.</span>
         </span>

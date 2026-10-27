@@ -139,7 +139,7 @@ function BreedImage({ breed }) {
       ) : (
         <img
           className={`${styles.breedImage} ${loaded ? styles.imageLoaded : ""}`}
-          src={breed.image}
+          src={`${import.meta.env.BASE_URL}${breed.image.replace(/^\//, "")}`}
           alt={breed.alt}
           loading="lazy"
           onLoad={() => setLoaded(true)}

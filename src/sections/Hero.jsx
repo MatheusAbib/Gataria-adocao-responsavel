@@ -65,44 +65,43 @@ export default function Hero() {
   return (
     <section className={styles.hero} id="inicio" ref={heroRef}>
       <div className={styles.content}>
-        <p className={styles.eyebrow}>
-          <span className={styles.eyebrowLine} />
-          Comportamento, saúde e adoção
-        </p>
+<p className={styles.eyebrow}>
+  <span className={styles.eyebrowLine} />
+  Adoção responsável, cuidado e conexão
+</p>
 
-        <h1 className={styles.title}>
-          <span className={styles.titleLine}>Entenda seu</span>
-          <span className={styles.titleLine}>
-            gato <em className={styles.hand}>de verdade.</em>
-          </span>
-        </h1>
+<h1 className={styles.title}>
+  <span className={styles.titleLine}>Encontre seu</span>
+  <span className={styles.titleLine}>
+    novo <em className={styles.hand}>companheiro.</em>
+  </span>
+</h1>
 
-        <p className={styles.description}>
-          Descubra o que os comportamentos do seu gato revelam, conheça
-          cuidados essenciais e encontre orientações para uma convivência
-          mais segura. Está pensando em adotar? Saiba por onde começar.
-        </p>
+<p className={styles.description}>
+Conheça gatos que esperam por um lar, entenda as responsabilidades da adoção e descubra tudo o que você precisa saber para receber um novo felino com segurança, preparo e carinho.
+</p>
 
-        <div className={styles.actions}>
-          <a className={styles.primaryAction} href="#sobre">
-            Entender meu gato
-            <span aria-hidden="true">↗</span>
-          </a>
+<div className={styles.actions}>
+  <a className={styles.primaryAction} href="#adocao">
+    Encontrar meu gato
+    <span aria-hidden="true">↗</span>
+  </a>
 
-          <a className={styles.secondaryAction} href="#adocao">
-            Quero adotar um gato
-            <span aria-hidden="true">↗</span>
-          </a>
-        </div>
+  <a className={styles.secondaryAction} href="#sobre">
+    Preparar-me para adotar
+    <span aria-hidden="true">↗</span>
+  </a>
+</div>
 
-        <div className={styles.note}>
-          <span className={styles.noteSymbol} aria-hidden="true">✳</span>
-          <p>
-            Comportamento felino,
-            <br />
-            cuidados e adoção responsável.
-          </p>
-        </div>
+<div className={styles.note}>
+  <span className={styles.noteSymbol} aria-hidden="true">✳</span>
+  <p>
+    Uma adoção consciente,
+    <br />
+    uma vida inteira de cuidado.
+  </p>
+</div>
+
       </div>
 
       <div className={styles.visual}>
