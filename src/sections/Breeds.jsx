@@ -9,6 +9,7 @@ const breeds = [
     origin: "Sem raça definida",
     personality: "Brincalhão e companheiro",
     sex: "Fêmea",
+    age: "Aproximadamente 1 ano",
     image: "/cats/frajolinha.jpg",
     alt: "Gato doméstico de pelagem bicolor",
     number: "02",
@@ -18,6 +19,7 @@ const breeds = [
     origin: "Tailândia",
     personality: "Comunicativo e sociável",
     sex: "Macho",
+    age: "Aproximadamente 2 anos",
     image: "/cats/siames.jpg",
     alt: "Gato siamês de pelagem clara e extremidades escuras",
     number: "03",
@@ -27,6 +29,7 @@ const breeds = [
     origin: "Sem raça definida",
     personality: "Afetuoso e observador",
     sex: "Fêmea",
+    age: "Aproximadamente 8 meses",
     image: "/cats/gatopreto.jpg",
     alt: "Gato doméstico de pelagem preta",
     number: "04",
@@ -36,6 +39,7 @@ const breeds = [
     origin: "Sem raça definida",
     personality: "Sociável e brincalhão",
     sex: "Macho",
+    age: "Aproximadamente 1 ano e 6 meses",
     image: "/cats/laranja.jpg",
     alt: "Gato de pelagem alaranjada",
     number: "05",
@@ -45,6 +49,7 @@ const breeds = [
     origin: "Pérsia (atual Irã)",
     personality: "Tranquilo e afetuoso",
     sex: "Fêmea",
+    age: "Aproximadamente 3 anos",
     image: "/cats/persa.jpg",
     alt: "Gato de pelagem longa e aparência arredondada",
     number: "06",
@@ -54,6 +59,7 @@ const breeds = [
     origin: "Sem raça definida",
     personality: "Calmo e companheiro",
     sex: "Macho",
+    age: "Aproximadamente 2 anos",
     image: "/cats/cinza.jpg",
     alt: "Gato doméstico de pelagem acinzentada",
     number: "08",
@@ -63,6 +69,7 @@ const breeds = [
     origin: "Sem raça definida",
     personality: "Atento e aventureiro",
     sex: "Fêmea",
+    age: "Aproximadamente 6 meses",
     image: "/cats/rajado.jpg",
     alt: "Gato doméstico com pelagem rajada",
     number: "10",
@@ -72,6 +79,7 @@ const breeds = [
     origin: "Sem raça definida",
     personality: "Independente e curioso",
     sex: "Fêmea",
+    age: "Aproximadamente 1 ano",
     image: "/cats/tricolor.jpg",
     alt: "Gato doméstico de pelagem com três cores",
     number: "11",
@@ -81,6 +89,7 @@ const breeds = [
     origin: "Estados Unidos",
     personality: "Sociável e brincalhão",
     sex: "Macho",
+    age: "Aproximadamente 4 anos",
     image: "/cats/mainecoon.jpg",
     alt: "Gato de porte grande e pelagem longa",
     number: "12",
@@ -90,6 +99,7 @@ const breeds = [
     origin: "Sem raça definida",
     personality: "Adaptável e sociável",
     sex: "Macho",
+    age: "Aproximadamente 1 ano e 6 meses",
     image: "/cats/pelocurto.jpg",
     alt: "Gato doméstico de pelo curto",
     number: "13",
@@ -192,6 +202,7 @@ export default function Breeds() {
         breed.origin,
         breed.personality,
         breed.sex,
+        breed.age,
       ].some((value) => normalizeText(value).includes(query))
     );
   }, [search]);
@@ -214,7 +225,7 @@ export default function Breeds() {
 
     searchTimeoutRef.current = setTimeout(() => {
       setIsSearching(false);
-    }, 1000);
+    }, 300);
   }
 
   function changePage(page) {
@@ -248,20 +259,20 @@ export default function Breeds() {
         <div>
           <p className={styles.eyebrow}>
             <span />
-            Raças disponíveis para Adoção
+            Gatos disponíveis para adoção
           </p>
 
           <h2>
-            Cada raça,
+            Cada gato,
             <br />
             um jeito de <em className={styles.hand}>ser.</em>
           </h2>
         </div>
 
         <p className={styles.introduction}>
-          Pelagens, temperamentos e características diferentes fazem parte
-          da diversidade felina. Conheça algumas raças e lembre-se: cada
-          gato tem sua própria personalidade.
+          Pelagens, temperamentos e idades diferentes fazem parte da
+          diversidade felina. Conheça os gatos e descubra qual combina
+          com você. Cada um tem sua própria personalidade.
         </p>
       </div>
 
@@ -276,8 +287,8 @@ export default function Breeds() {
             type="search"
             value={search}
             onChange={(event) => handleSearch(event.target.value)}
-            placeholder="Pesquisar raça, origem, sexo..."
-            aria-label="Pesquisar gatos por raça, origem, personalidade ou sexo"
+            placeholder="Pesquisar gato, origem, idade..."
+            aria-label="Pesquisar gatos por nome, origem, personalidade, sexo ou idade"
           />
 
           {search && (
@@ -294,32 +305,52 @@ export default function Breeds() {
 
         <p className={styles.resultCount} aria-live="polite">
           {filteredBreeds.length}{" "}
-          {filteredBreeds.length === 1 ? "gato encontrado" : "gatos encontrados"}
+          {filteredBreeds.length === 1
+            ? "gato encontrado"
+            : "gatos encontrados"}
         </p>
       </div>
 
       <div ref={listTopRef} className={styles.listAnchor} />
 
       {isSearching && (
-        <div className={styles.searchLoader} role="status" aria-live="polite">
+        <div
+          className={styles.searchLoader}
+          role="status"
+          aria-live="polite"
+        >
           <span className={styles.spinner} />
           <span>Buscando gatos...</span>
         </div>
       )}
 
       {!isSearching && visibleBreeds.length > 0 && (
-        <div className={styles.grid} ref={gridRef} aria-live="polite">
+        <div
+          className={styles.grid}
+          ref={gridRef}
+          aria-live="polite"
+        >
           {visibleBreeds.map((breed) => (
-            <article className={`${styles.card} reveal`} key={breed.name}>
+            <article
+              className={`${styles.card} reveal`}
+              key={breed.name}
+            >
               <BreedImage breed={breed} />
 
               <div className={styles.cardContent}>
                 <span className={styles.origin}>{breed.origin}</span>
                 <h3>{breed.name}</h3>
                 <p>{breed.personality}</p>
-                <span className={styles.sex}>
-                  {breed.sex === "Macho" ? "♂" : "♀"} {breed.sex}
-                </span>
+
+                <div className={styles.cardDetails}>
+                  <span className={styles.sex}>
+                    {breed.sex === "Macho" ? "♂" : "♀"} {breed.sex}
+                  </span>
+
+                  <span className={styles.age}>
+                    {breed.age}
+                  </span>
+                </div>
               </div>
             </article>
           ))}
@@ -331,7 +362,8 @@ export default function Breeds() {
           <span aria-hidden="true">⌕</span>
           <h3>Nenhum gato encontrado</h3>
           <p>
-            Tente pesquisar por outro nome, origem, personalidade ou sexo.
+            Tente pesquisar por outro nome, origem, personalidade,
+            sexo ou idade.
           </p>
           <button type="button" onClick={() => handleSearch("")}>
             Ver todos os gatos
@@ -340,7 +372,10 @@ export default function Breeds() {
       )}
 
       {!isSearching && totalPages > 1 && (
-        <nav className={styles.pagination} aria-label="Paginação dos gatos">
+        <nav
+          className={styles.pagination}
+          aria-label="Paginação dos gatos"
+        >
           <button
             className={styles.pageArrow}
             type="button"
@@ -351,22 +386,23 @@ export default function Breeds() {
             ←
           </button>
 
-          {Array.from({ length: totalPages }, (_, index) => index + 1).map(
-            (page) => (
-              <button
-                className={`${styles.pageNumber} ${
-                  safePage === page ? styles.activePage : ""
-                }`}
-                type="button"
-                key={page}
-                onClick={() => changePage(page)}
-                aria-label={`Página ${page}`}
-                aria-current={safePage === page ? "page" : undefined}
-              >
-                {String(page).padStart(2, "0")}
-              </button>
-            )
-          )}
+          {Array.from(
+            { length: totalPages },
+            (_, index) => index + 1
+          ).map((page) => (
+            <button
+              className={`${styles.pageNumber} ${
+                safePage === page ? styles.activePage : ""
+              }`}
+              type="button"
+              key={page}
+              onClick={() => changePage(page)}
+              aria-label={`Página ${page}`}
+              aria-current={safePage === page ? "page" : undefined}
+            >
+              {String(page).padStart(2, "0")}
+            </button>
+          ))}
 
           <button
             className={styles.pageArrow}
@@ -383,8 +419,8 @@ export default function Breeds() {
       <div className={`${styles.note} reveal`}>
         <span aria-hidden="true">✳</span>
         <p>
-          Raça não define tudo. Gatos sem raça definida também têm histórias,
-          características e personalidades extraordinárias.
+          Raça não define tudo. Gatos sem raça definida também têm
+          histórias, características e personalidades extraordinárias.
         </p>
       </div>
     </section>

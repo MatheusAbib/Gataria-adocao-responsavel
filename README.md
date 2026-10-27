@@ -7,6 +7,9 @@ Gataria é um projeto web desenvolvido para apresentar gatos de maneira acolhedo
 
 O projeto utiliza uma identidade visual leve, tipografia expressiva, imagens em destaque e animações sutis para criar uma experiência agradável tanto em dispositivos desktop quanto em dispositivos móveis.
 
+> 🔗 **Acesse o projeto online:** (https://matheusabib.github.io/Gataria-adote/)
+---
+
 ## ✨ Funcionalidades
 
 ### 🐱 Catálogo de gatos
