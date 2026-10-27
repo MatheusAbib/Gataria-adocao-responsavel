@@ -96,13 +96,15 @@ export default function Nutrition() {
             </p>
           </div>
 
-        <a
-          href="https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feeding-your-cat"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Conhecer outras orientações
-        </a>
+          <a className={styles.action}
+            href="https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feeding-your-cat"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Conhecer outras orientações
+            <span aria-hidden="true">↗</span>
+
+          </a>
         </div>
       </div>
     </section>

@@ -197,12 +197,23 @@
     border-color var(--transition-base);
 }
 
-.action:hover {
+.action span {
   border-color: var(--color-foreground);
+  display: inline-block;
+  transition: transform var(--transition-base);
+}
+
+.action:hover{
   background: var(--color-foreground);
 }
 
-@media (max-width: 760px) {
+.action:hover span {
+  transform: translate(3px, -3px);
+}
+
+
+
+@media (max-width: 850px) {
   .content {
     grid-template-columns: 1fr;
     gap: 3rem;

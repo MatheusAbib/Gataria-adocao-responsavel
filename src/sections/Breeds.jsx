@@ -39,7 +39,7 @@ const breeds = [
     origin: "Sem raça definida",
     personality: "Sociável e brincalhão",
     sex: "Macho",
-    age: "Aproximadamente 1 ano e 6 meses",
+    age: "1 ano e 6 meses",
     image: "/cats/laranja.jpg",
     alt: "Gato de pelagem alaranjada",
     number: "05",
@@ -99,7 +99,7 @@ const breeds = [
     origin: "Sem raça definida",
     personality: "Adaptável e sociável",
     sex: "Macho",
-    age: "Aproximadamente 1 ano e 6 meses",
+    age: "1 ano e 6 meses",
     image: "/cats/pelocurto.jpg",
     alt: "Gato doméstico de pelo curto",
     number: "13",
@@ -259,20 +259,20 @@ export default function Breeds() {
         <div>
           <p className={styles.eyebrow}>
             <span />
-            Gatos disponíveis para adoção
+            Cada gato, um jeito de ser
           </p>
 
           <h2>
-            Cada gato,
+            Gatos disponíveis,
             <br />
-            um jeito de <em className={styles.hand}>ser.</em>
+            para <em className={styles.hand}>adoção.</em>
           </h2>
         </div>
 
         <p className={styles.introduction}>
           Pelagens, temperamentos e idades diferentes fazem parte da
-          diversidade felina. Conheça os gatos e descubra qual combina
-          com você. Cada um tem sua própria personalidade.
+          diversidade felina. Conheça os gatos disponíveis par aadoção da Gataria e descubra qual combina
+          com você.
         </p>
       </div>
 
@@ -337,21 +337,50 @@ export default function Breeds() {
             >
               <BreedImage breed={breed} />
 
-              <div className={styles.cardContent}>
-                <span className={styles.origin}>{breed.origin}</span>
-                <h3>{breed.name}</h3>
-                <p>{breed.personality}</p>
 
-                <div className={styles.cardDetails}>
-                  <span className={styles.sex}>
-                    {breed.sex === "Macho" ? "♂" : "♀"} {breed.sex}
-                  </span>
+            <div className={styles.cardContent}>
+              <span className={styles.origin}>{breed.origin}</span>
 
-                  <span className={styles.age}>
-                    {breed.age}
+              <h3>{breed.name}</h3>
+
+              <p className={styles.personality}>{breed.personality}</p>
+
+              <div className={styles.cardDetails}>
+                <div className={styles.detail}>
+                  <span className={styles.detailLabel}>Sexo</span>
+                  <span className={styles.detailValue}>
+                    <span aria-hidden="true">
+                      {breed.sex === "Macho" ? "♂" : "♀"}
+                    </span>
+                    {breed.sex}
                   </span>
                 </div>
+
+                <div className={styles.detail}>
+                  <span className={styles.detailLabel}>Idade</span>
+                  <span className={styles.detailValue}>{breed.age}</span>
+                </div>
               </div>
+
+
+<a
+  className={styles.adoptionAction}
+  href="#adocao"
+  onClick={(event) => {
+    event.preventDefault();
+    document.getElementById("adocao")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }}
+  aria-label={`Tenho interesse em adotar ${breed.name}`}
+>
+  <span>Tenho interesse em adotar</span>
+  <span className={styles.actionArrow} aria-hidden="true">↗</span>
+</a>
+
+            </div>
+
             </article>
           ))}
         </div>

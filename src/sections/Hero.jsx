@@ -1,4 +1,4 @@
-
+﻿
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import styles from "./Hero.module.css";
@@ -65,52 +65,60 @@ export default function Hero() {
   return (
     <section className={styles.hero} id="inicio" ref={heroRef}>
       <div className={styles.content}>
-<p className={styles.eyebrow}>
-  <span className={styles.eyebrowLine} />
-  Adoção responsável, cuidado e conexão
-</p>
+        <p className={styles.eyebrow}>
+          <span className={styles.eyebrowLine} />
+          Adoção responsável, cuidado e conexão
+        </p>
 
-<h1 className={styles.title}>
-  <span className={styles.titleLine}>Encontre seu</span>
-  <span className={styles.titleLine}>
-    novo <em className={styles.hand}>companheiro.</em>
-  </span>
-</h1>
+        <h1 className={styles.title}>
+          <span className={styles.titleLine}>Encontre seu</span>
+          <span className={styles.titleLine}>
+            novo <em className={styles.hand}>companheiro.</em>
+          </span>
+        </h1>
 
-<p className={styles.description}>
-Conheça gatos que esperam por um lar, entenda as responsabilidades da adoção e descubra tudo o que você precisa saber para receber um novo felino com segurança, preparo e carinho.
-</p>
+        <p className={styles.description}>
+          Conheça gatos que esperam por um lar, entenda as responsabilidades
+          da adoção e descubra tudo o que você precisa saber para receber um
+          novo felino com segurança, preparo e carinho.
+        </p>
 
-<div className={styles.actions}>
-  <a className={styles.primaryAction} href="#adocao">
-    Encontrar meu gato
-    <span aria-hidden="true">↗</span>
-  </a>
+        <div className={styles.actions}>
+          <a className={styles.primaryAction} href="#adocao">
+            Encontrar meu gato
+            <span aria-hidden="true">↗</span>
+          </a>
 
-  <a className={styles.secondaryAction} href="#sobre">
-    Preparar-me para adotar
-    <span aria-hidden="true">↗</span>
-  </a>
-</div>
+          <a className={styles.secondaryAction} href="#sobre">
+            Preparar-me para adotar
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
 
-<div className={styles.note}>
-  <span className={styles.noteSymbol} aria-hidden="true">✳</span>
-  <p>
-    Uma adoção consciente,
-    <br />
-    uma vida inteira de cuidado.
-  </p>
-</div>
-
+        <div className={styles.note}>
+          <span className={styles.noteSymbol} aria-hidden="true">✳</span>
+          <p>
+            Uma adoção consciente,
+            <br />
+            uma vida inteira de cuidado.
+          </p>
+        </div>
       </div>
 
       <div className={styles.visual}>
         <div className={styles.imageFrame}>
+          <div className={styles.imageSkeleton} aria-hidden="true" />
           <img
             className={styles.mainImage}
             src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=1200&q=85"
             alt="Gato observando atentamente o ambiente"
             fetchPriority="high"
+            onLoad={(event) =>
+              event.currentTarget.classList.add(styles.imageLoaded)
+            }
+            onError={(event) => {
+              event.currentTarget.style.display = "none";
+            }}
           />
         </div>
 
@@ -143,8 +151,7 @@ Conheça gatos que esperam por um lar, entenda as responsabilidades da adoção 
         className={styles.scrollCue}
         href="#sobre"
         aria-label="Continuar para a próxima seção"
-      >
-      </a>
+      />
     </section>
   );
 }
