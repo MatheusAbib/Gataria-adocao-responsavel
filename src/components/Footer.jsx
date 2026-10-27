@@ -9,7 +9,7 @@ export default function Footer() {
       <div className={styles.signature}>
         <img
           className={styles.symbol}
-          src="/favicon.svg"
+          src={`${import.meta.env.BASE_URL}favicon.svg`}
           alt=""
           aria-hidden="true"
         />
