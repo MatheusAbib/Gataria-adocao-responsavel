@@ -1,0 +1,332 @@
+
+.header {
+  position: fixed;
+  top: 1.25rem;
+  left: 50%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: min(calc(100% - 3rem), 1280px);
+  min-height: 76px;
+  padding: 0.85rem 1.5rem;
+  transform: translateX(-50%);
+  border: 1px solid rgba(41, 44, 38, 0.08);
+  border-radius: var(--radius-pill);
+  background: rgba(245, 240, 231, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition:
+    background var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.scrolled {
+  border-color: rgba(41, 44, 38, 0.12);
+  background: rgba(245, 240, 231, 0.85);
+  box-shadow: 0 7px 35px rgba(41, 44, 38, 0.035);
+}
+
+.logo {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--color-foreground);
+  text-decoration: none;
+}
+
+.logoIcon {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 2.2vw, 2.05rem);
+  font-weight: 400;
+  letter-spacing: -0.075em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.logoDot {
+  color: var(--color-primary);
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.1rem, 2.1vw, 2rem);
+  margin-left: auto;
+}
+
+.navigation a {
+  position: relative;
+  padding: 0.65rem 0;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+}
+
+.navigation a::after {
+  position: absolute;
+  right: 0;
+  bottom: 0.25rem;
+  left: 0;
+  height: 1px;
+  background: var(--color-primary);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.navigation a:hover,
+.navigation a.active {
+  color: var(--color-foreground);
+}
+
+.navigation a:hover::after,
+.navigation a.active::after {
+  transform: scaleX(1);
+}
+
+.menuToggle {
+  display: none;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(41, 44, 38, 0.1);
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-foreground);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.menuToggle:hover {
+  border-color: var(--color-primary);
+  background: var(--color-background);
+}
+
+.menuIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 18px;
+}
+
+.menuIcon span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  border-radius: 2px;
+  background: currentColor;
+  transform-origin: center;
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-fast),
+    width var(--transition-base);
+}
+
+.menuIcon span:nth-child(2) {
+  width: 13px;
+  margin-left: 5px;
+}
+
+.menuOpen .menuIcon span:first-child {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.menuOpen .menuIcon span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menuOpen .menuIcon span:last-child {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+.logo:focus-visible,
+.navigation a:focus-visible,
+.menuToggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1000px) and (min-width: 769px) {
+  .header {
+    gap: 1.25rem;
+    width: calc(100% - 2rem);
+    padding-right: 1.15rem;
+    padding-left: 1.15rem;
+  }
+
+  .logo {
+    gap: 0.45rem;
+  }
+
+  .logoIcon {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .logoText {
+    font-size: 1.7rem;
+  }
+
+  .navigation {
+    gap: clamp(0.8rem, 1.5vw, 1.2rem);
+  }
+
+  .navigation a {
+    font-size: 0.74rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    top: 1rem;
+    width: calc(100% - 2rem);
+    min-height: 68px;
+    padding: 0.65rem 0.85rem 0.65rem 1.15rem;
+    border-radius: 2rem;
+  }
+
+  .scrolled {
+    box-shadow: 0 8px 28px rgba(41, 44, 38, 0.09);
+  }
+
+  .logo {
+    gap: 0.6rem;
+  }
+
+  .logoIcon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .logoText {
+    font-size: 1.85rem;
+  }
+
+  .menuToggle {
+    display: inline-flex;
+  }
+
+  .navigation {
+    position: absolute;
+    top: calc(100% + 0.65rem);
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 0 1.15rem;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: 1.5rem;
+    background: rgba(245, 240, 231, 0.98);
+    box-shadow: 0 14px 36px rgba(41, 44, 38, 0.08);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition:
+      opacity var(--transition-base),
+      transform var(--transition-base),
+      visibility var(--transition-base),
+      padding var(--transition-base),
+      border-color var(--transition-base);
+  }
+
+  .navigationOpen {
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
+    border-color: rgba(41, 44, 38, 0.08);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .navigation a {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    padding: 0.75rem 0.25rem;
+    border-bottom: 1px solid rgba(41, 44, 38, 0.07);
+    color: var(--color-foreground);
+    font-size: 0.88rem;
+  }
+
+  .navigation a:last-child {
+    border-bottom: none;
+  }
+
+  .navigation a::after {
+    display: none;
+  }
+
+  .navigation a.active {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 380px) {
+  .header {
+    top: 0.75rem;
+    width: calc(100% - 1.25rem);
+    min-height: 62px;
+    padding-left: 0.9rem;
+  }
+
+  .logo {
+    gap: 0.45rem;
+  }
+
+  .logoIcon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .logoText {
+    font-size: 1.65rem;
+  }
+
+  .menuToggle {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .navigation,
+  .navigation a,
+  .navigation a::after,
+  .menuToggle,
+  .menuIcon span {
+    transition: none;
+  }
+}

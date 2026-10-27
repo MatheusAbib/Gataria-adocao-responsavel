@@ -1,0 +1,260 @@
+
+.adoption {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(3rem, 0vw, 8rem);
+  padding: var(--section-spacing) var(--page-gutter);
+  overflow: hidden;
+  background: var(--color-secondary);
+}
+
+.imageColumn {
+  position: relative;
+  width: 100%;
+  max-width: 530px;
+  justify-self: end;
+  padding: 0 1.5rem 2rem 0;
+}
+
+.imageFrame {
+  aspect-ratio: 0.82;
+  overflow: hidden;
+  border-radius: 48% 48% 0.35rem 0.35rem;
+  background: var(--color-surface);
+}
+
+.imageFrame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.imageColumn:hover .imageFrame img {
+  transform: scale(1.04);
+}
+
+.imageNote {
+  position: absolute;
+  right: -0.5rem;
+  bottom: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: min(270px, 75%);
+  padding: 1.1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: var(--color-background);
+  box-shadow: 0 10px 30px rgba(41, 44, 38, 0.07);
+}
+
+.imageNote > span {
+  color: var(--color-primary);
+  font-size: 1.6rem;
+}
+
+.imageNote p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.imageIndex {
+  position: absolute;
+  right: 2rem;
+  bottom: 0;
+  color: var(--color-muted);
+  font-family: var(--hand);
+  font-size: 1.25rem;
+}
+
+.content {
+  width: 100%;
+  max-width: 680px;
+  justify-self: start;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.5rem;
+  color: var(--color-primary);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.eyebrow span {
+  width: 1.8rem;
+  height: 1px;
+  background: var(--color-primary);
+}
+
+.content h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3.3rem, 6vw, 5.8rem);
+  font-weight: 400;
+  letter-spacing: -0.07em;
+  line-height: 0.98;
+}
+
+.content h2 em {
+  color: var(--color-primary);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hand {
+  font-family: var(--hand);
+  font-size: 1.12em;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+}
+
+.description {
+  max-width: 500px;
+  margin: 1.6rem 0 2rem;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  line-height: 1.9;
+}
+
+.promise {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.2rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.promiseIcon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-primary);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.promise h3 {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+
+.promise p {
+  max-width: 600px;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.83rem;
+  line-height: 1.8;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  min-height: 52px;
+  margin-top: 1.5rem;
+  padding: 0.85rem 1.3rem;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  color: var(--color-background);
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.action span {
+  font-size: 1.05rem;
+  transition: transform var(--transition-fast);
+}
+
+.action:hover {
+  border-color: var(--color-foreground);
+  background: var(--color-foreground);
+}
+
+.action:hover span {
+  transform: translate(3px, -3px);
+}
+
+.handwritten {
+  margin: 1.2rem 0 0;
+  color: var(--color-primary);
+  font-family: var(--hand);
+  font-size: 1.45rem;
+}
+
+@media (max-width: 760px) {
+  .adoption {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .imageColumn {
+display: none;
+  }
+
+  .content {
+    max-width: 620px;
+    justify-self: center;
+  }
+
+  .content h2 {
+    font-size: clamp(3.4rem, 10vw, 5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .content h2 {
+    font-size: clamp(3rem, 11.5vw, 4.1rem);
+  }
+
+  .description {
+    font-size: 0.88rem;
+  }
+
+  .imageNote {
+    right: 0;
+    padding: 0.85rem;
+  }
+
+  .imageNote p {
+    font-size: 0.95rem;
+  }
+
+  .promise {
+    gap: 0.75rem;
+  }
+
+  .promise h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .imageFrame img,
+  .action,
+  .action span {
+    transition: none;
+  }
+}
+

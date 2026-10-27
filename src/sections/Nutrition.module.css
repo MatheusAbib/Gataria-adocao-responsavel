@@ -1,0 +1,253 @@
+
+.nutrition {
+  padding: var(--section-spacing) var(--page-gutter);
+  background: var(--color-surface);
+}
+
+.heading {
+  max-width: 1400px;
+  margin: 0 auto 3.5rem;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.4rem;
+  color: var(--color-primary);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.eyebrow span {
+  width: 1.8rem;
+  height: 1px;
+  background: var(--color-primary);
+}
+
+.heading h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  font-weight: 400;
+  letter-spacing: -0.075em;
+  line-height: 0.98;
+}
+
+.heading h2 em {
+  color: var(--color-primary);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hand {
+  font-family: var(--hand);
+  font-size: 1.12em;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+}
+
+.introduction {
+  max-width: 600px;
+  margin: 1.5rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.9;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(2.5rem, 7vw, 6rem);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.visual {
+  position: relative;
+  min-width: 0;
+}
+
+.visual > img {
+  width: 100%;
+  aspect-ratio: 0.95;
+  border-radius: var(--radius-medium);
+  object-fit: cover;
+}
+
+.imageLabel {
+  position: absolute;
+  right: -1rem;
+  bottom: 2rem;
+  width: min(270px, 80%);
+  padding: 1.2rem 1.4rem;
+  border-radius: var(--radius-medium);
+  background: var(--color-background);
+}
+
+.imageLabel > span {
+  color: var(--color-primary);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.imageLabel p {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: -0.035em;
+}
+
+.guidelines {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.25rem;
+}
+
+.guideline {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 20px;
+  align-items: start;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.guideline:first-child {
+  padding-top: 0;
+}
+
+.number {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-primary);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.guideline h3 {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.guideline p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  line-height: 1.85;
+}
+
+.symbol {
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+
+.notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  margin-top: 1.8rem;
+  padding: 1.2rem;
+  border-radius: var(--radius-medium);
+  background: rgba(83, 103, 73, 0.08);
+}
+
+.notice > span {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+}
+
+.notice p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.77rem;
+  line-height: 1.8;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  justify-content: center;
+  gap: 1.2rem;
+  min-height: 50px;
+  margin-top: 1.5rem;
+  padding: 0.85rem 1.3rem;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  color: var(--color-background);
+  font-size: 0.8rem;
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.action:hover {
+  border-color: var(--color-foreground);
+  background: var(--color-foreground);
+}
+
+@media (max-width: 760px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .visual {
+    display: none;
+  }
+
+  .visual > img {
+    aspect-ratio: 1;
+  }
+
+  .imageLabel {
+    right: -0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading h2 {
+    font-size: clamp(2.8rem, 11vw, 4rem);
+  }
+
+  .guideline {
+    grid-template-columns: 32px minmax(0, 1fr) 14px;
+    gap: 0.7rem;
+  }
+
+  .number {
+    width: 32px;
+    height: 32px;
+  }
+
+  .guideline h3 {
+    font-size: 1.3rem;
+  }
+
+  .action {
+    width: 100%;
+    gap: 0.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .action {
+    transition: none;
+  }
+}

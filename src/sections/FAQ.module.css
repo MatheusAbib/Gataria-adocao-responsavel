@@ -1,0 +1,239 @@
+
+.faq {
+  padding: var(--section-spacing) var(--page-gutter);
+  background: var(--color-background);
+}
+
+.heading {
+  max-width: 1400px;
+  margin: 0 auto 3.5rem;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.4rem;
+  color: var(--color-primary);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.eyebrow span {
+  width: 1.8rem;
+  height: 1px;
+  background: var(--color-primary);
+}
+
+.heading h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  font-weight: 400;
+  letter-spacing: -0.075em;
+  line-height: 0.98;
+}
+
+.heading h2 em {
+  color: var(--color-primary);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hand {
+  font-family: var(--hand);
+  font-size: 1.12em;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+}
+
+.introduction {
+  max-width: 520px;
+  margin: 1.5rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.9;
+}
+
+.questions {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-top: 1px solid var(--color-border);
+}
+
+.item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.question {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) 34px;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  padding: 1.6rem 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.number {
+  color: var(--color-muted);
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.questionText {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+  letter-spacing: -0.035em;
+  line-height: 1.35;
+  transition: color var(--transition-fast);
+}
+
+.question:hover .questionText,
+.open .questionText {
+  color: var(--color-primary);
+}
+
+.question:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+.toggle {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  transition:
+    color var(--transition-fast),
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.open .toggle {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-background);
+}
+
+.answer {
+  padding: 0 4rem 1.7rem 3.9rem;
+}
+
+.answer[hidden] {
+  display: none;
+}
+
+.answer p {
+  max-width: 700px;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  line-height: 1.9;
+}
+
+.bottomNote {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 3rem auto 0;
+  padding: 1.4rem 1.5rem;
+  border-radius: var(--radius-medium);
+  background: var(--color-surface);
+}
+
+.bottomNote > span {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.bottomNote p {
+  flex: 1;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  line-height: 1.8;
+}
+
+.bottomNote a {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.bottomNote a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+@media (max-width: 700px) {
+  .question {
+    grid-template-columns: 28px minmax(0, 1fr) 30px;
+    gap: 0.8rem;
+  }
+
+  .answer {
+    padding: 0 0 1.5rem 2.4rem;
+  }
+
+  .bottomNote {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .bottomNote p {
+    flex-basis: calc(100% - 3rem);
+  }
+
+  .bottomNote a {
+    margin-left: 2.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .heading h2 {
+    font-size: clamp(2.7rem, 10.5vw, 3.8rem);
+  }
+
+  .question {
+    grid-template-columns: 24px minmax(0, 1fr) 28px;
+    gap: 0.6rem;
+  }
+
+  .questionText {
+    font-size: 1.15rem;
+  }
+
+  .toggle {
+    width: 28px;
+    height: 28px;
+  }
+
+  .answer {
+    padding-left: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .questionText,
+  .toggle {
+    transition: none;
+  }
+}

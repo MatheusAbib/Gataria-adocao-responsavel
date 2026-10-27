@@ -1,0 +1,135 @@
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3.5rem, 8vw, 7rem) var(--page-gutter);
+  background: var(--color-foreground);
+  color: var(--color-background);
+}
+
+.signature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.symbol {
+  display: block;
+  width: clamp(3.5rem, 7vw, 6rem);
+  height: clamp(3.5rem, 7vw, 6rem);
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.title {
+  margin: 0;
+  color: var(--color-background);
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 18vw, 16rem);
+  font-weight: 400;
+  letter-spacing: -0.085em;
+  line-height: 0.8;
+  text-align: center;
+}
+
+.title span {
+  color: #b7c6a7;
+}
+
+
+
+.imageCaption {
+  display: flex;
+  justify-content: center;
+  margin-top: -0.5rem;
+}
+
+.imageCaption span {
+  color: var(--color-background);
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+
+.copyright {
+  position: absolute;
+  right: var(--page-gutter);
+  bottom: 1.25rem;
+  color: var(--color-background);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  opacity: 0.5;
+}
+
+@media (max-width: 480px) {
+  .copyright {
+    right: 0;
+    bottom: 1rem;
+    left: 0;
+    text-align: center;
+    font-size: 0.65rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .imageCaption {
+    margin-top: -0.35rem;
+  }
+
+  .imageCaption span {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .signature {
+    gap: 1.5rem;
+  }
+
+  .symbol {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .title {
+    font-size: clamp(4.5rem, 18vw, 8rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .signature {
+    gap: 1.25rem;
+  }
+
+  .symbol {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+  .title {
+    font-size: clamp(3.8rem, 17.5vw, 5.5rem);
+    letter-spacing: -0.075em;
+  }
+}
