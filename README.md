@@ -99,21 +99,3 @@ O Gataria busca transformar informações sobre gatos em uma experiência acess�
 O projeto reúne educação felina, conteúdo sobre cuidados, respostas a dúvidas cotidianas, um fluxo estruturado de adoção e descoberta de gatos, aplicando conceitos de desenvolvimento front-end, componentização, pesquisa de dados, responsividade, acessibilidade e animações interativas.
 
 ---
-
-## 🚀 Como rodar o projeto
-
-```bash
-# Clonar o repositório
-git clone https://github.com/matheusabib/Gataria-adote.git
-
-# Entrar na pasta
-cd Gataria-adote
-
-# Instalar dependências
-npm install
-
-# Rodar em desenvolvimento
-npm run dev
-
-# Build de produção
-npm run build
