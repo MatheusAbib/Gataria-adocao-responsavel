@@ -4,7 +4,7 @@ O Gataria é uma plataforma web dedicada à **adoção responsável de gatos**. 
 
 Mais do que um catálogo, o Gataria é um guia completo: reúne informações sobre comportamento felino, alimentação, cuidados, requisitos de adoção e um processo estruturado de interesse, ajudando futuros tutores a tomarem decisões conscientes.
 
-> 🔗 **Acesse o projeto online:** (https://matheusabib.github.io/Gataria-adote/)
+> 🔗 **Acesse o projeto online:** (https://matheusabib.github.io/Gataria-adocao-responsavel/)
 
 ---
 
