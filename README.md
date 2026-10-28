@@ -1,16 +1,29 @@
-# 🐈 Gataria
+# 🐈 Gataria — Adoção Responsável
 
-O Gataria é um projeto web dedicado à adoção responsável de gatos e à preparação de futuros tutores. A plataforma reúne a descoberta de gatos, informações sobre cuidados e conteúdos educativos que ajudam as pessoas a compreender melhor as responsabilidades envolvidas em receber um felino em casa.
+O Gataria é uma plataforma web dedicada à **adoção responsável de gatos**. O site conecta gatos que esperam por um lar a pessoas dispostas a oferecer um ambiente seguro, preparado e amoroso.
 
-O projeto busca incentivar decisões conscientes, aproximando futuros tutores do universo felino e oferecendo informações para uma convivência mais responsável.
+Mais do que um catálogo, o Gataria é um guia completo: reúne informações sobre comportamento felino, alimentação, cuidados, requisitos de adoção e um processo estruturado de interesse, ajudando futuros tutores a tomarem decisões conscientes.
 
-Gataria combina conteúdo informativo, imagens em destaque, animações sutis e navegação intuitiva para proporcionar uma experiência acolhedora e envolvente.
-
-🔗 **Acesse o projeto:** (https://matheusabib.github.io/Gataria-adote/)
+> 🔗 **Acesse o projeto online:** (https://matheusabib.github.io/Gataria-adote/)
 
 ---
 
 ## ✨ O que você encontra no Gataria
+
+### 🏡 Adoção e descoberta de gatos
+
+O coração do site. Apresenta os gatos disponíveis para adoção com informações completas e um fluxo estruturado de interesse.
+
+- Catálogo em cards com foto, status e nome do gato.
+- **Status por gato:** Disponível, Em processo de adoção ou Adotado.
+- Cards bloqueados para gatos em processo ou já adotados, evitando candidaturas duplicadas.
+- **Modal de detalhes** com foto ampliada, história, temperamento, idade, sexo, porte, castração e vacinação.
+- **Filtros combinados** por sexo, idade, porte e status.
+- **Busca textual** por nome, origem, personalidade, sexo ou idade.
+- **Persistência dos filtros na URL** — ao recarregar, os filtros continuam ativos.
+- **Paginação** com navegação entre páginas.
+- **Formulário de interesse** integrado ao WhatsApp, com validação e máscara de telefone.
+- Mensagem pré-formatada enviada ao WhatsApp com os dados do interessado e o nome do gato.
 
 ### 🐾 Comportamento felino
 
@@ -20,6 +33,16 @@ Uma área dedicada a ajudar o visitante a compreender melhor a linguagem corpora
 - Compreensão de diferentes estados emocionais por meio de sinais observáveis.
 - Reconhecimento de comportamentos que podem indicar desconforto, medo ou irritação.
 - Informações para interpretar melhor as atitudes dos gatos no cotidiano.
+
+### 📋 Como funciona a adoção
+
+Uma seção que explica o processo de adoção em **4 passos** (interesse → conversa → visita → adoção), além dos **requisitos** para adotar:
+
+- Ser maior de 18 anos.
+- Moradia telada (janelas e varandas).
+- Termo de adoção assinado.
+- Castração obrigatória (feita pela ONG).
+- Acompanhamento pós-adoção.
 
 ### 🍽️ Alimentação dos gatos
 
@@ -33,31 +56,21 @@ Conteúdo informativo sobre alimentação felina e dúvidas comuns relacionadas 
 
 ### ❓ Dúvidas frequentes
 
-Uma seção de perguntas e respostas sobre situações comuns na convivência com gatos.
+Uma seção com **10 perguntas e respostas** divididas em dois blocos:
 
-Entre os assuntos abordados estão:
-
+**Comportamento e cuidados:**
 - Como saber se um gato está feliz?
 - Com que frequência um gato precisa ir ao veterinário?
 - Gatos podem viver exclusivamente dentro de casa?
 - É possível ter mais de um gato no mesmo ambiente?
-- Como lidar com dúvidas relacionadas à alimentação?
+- Como escolher a alimentação ideal?
 
-### 🐈 Raças felinas
-
-Uma área voltada à descoberta da diversidade dos gatos, reunindo informações sobre raças e suas características.
-
-A proposta é permitir que o visitante conheça diferentes perfis felinos, suas particularidades físicas e comportamentais e as diferenças entre as raças apresentadas.
-
-### 🏡 Adoção e descoberta de gatos
-
-O site também apresenta gatos individualmente, com informações e características que ajudam o visitante a conhecer cada animal.
-
-- Catálogo organizado em cards.
-- Apresentação de nomes, origens, personalidade e outras informações disponíveis.
-- Pesquisa por nome, raça, origem, personalidade e sexo.
-- Filtros de pesquisa que desconsideram diferenças entre maiúsculas, minúsculas e acentuação.
-- Feedback visual durante a pesquisa e mensagens para resultados não encontrados.
+**Adoção responsável:**
+- Preciso pagar para adotar?
+- Posso adotar morando em apartamento?
+- O gato vem castrado e vacinado?
+- Como funciona o acompanhamento pós-adoção?
+- Posso devolver o gato se não me adaptar?
 
 ---
 
@@ -69,17 +82,38 @@ O site também apresenta gatos individualmente, com informações e característ
 | JavaScript (ES6+) | Implementação da lógica e das interações. |
 | Vite | Desenvolvimento e compilação da aplicação. |
 | CSS3 | Estilização, responsividade e efeitos visuais. |
+| CSS Modules | Organização e isolamento dos estilos. |
+| PrimeReact | Componentes de formulário (InputText, Dropdown, RadioButton, Button, Toast). |
 | GSAP | Criação e controle de animações. |
 | ScrollTrigger | Animações associadas à rolagem da página. |
 | Lenis | Implementação de rolagem suave. |
 | React Hooks | Gerenciamento de estado, referências e efeitos. |
-| CSS Modules | Organização e isolamento dos estilos. |
 | GitHub Actions | Automação da publicação do projeto no GitHub Pages. |
 
 ---
 
 ## 🎯 Objetivo do projeto
 
-O Gataria busca transformar informações sobre gatos em uma experiência acessível, visualmente consistente e fácil de explorar.
+O Gataria busca transformar informações sobre gatos em uma experiência acessível, visualmente consistente e fácil de explorar, com foco em **adoção responsável**.
 
-O projeto reúne educação felina, conteúdo sobre cuidados, respostas a dúvidas cotidianas e descoberta de gatos, aplicando conceitos de desenvolvimento front-end, componentização, pesquisa de dados, responsividade e animações interativas.
+O projeto reúne educação felina, conteúdo sobre cuidados, respostas a dúvidas cotidianas, um fluxo estruturado de adoção e descoberta de gatos, aplicando conceitos de desenvolvimento front-end, componentização, pesquisa de dados, responsividade, acessibilidade e animações interativas.
+
+---
+
+## 🚀 Como rodar o projeto
+
+```bash
+# Clonar o repositório
+git clone https://github.com/matheusabib/Gataria-adote.git
+
+# Entrar na pasta
+cd Gataria-adote
+
+# Instalar dependências
+npm install
+
+# Rodar em desenvolvimento
+npm run dev
+
+# Build de produção
+npm run build

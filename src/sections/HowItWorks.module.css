@@ -1,0 +1,221 @@
+.howItWorks {
+  padding: var(--section-spacing) var(--page-gutter);
+  background: var(--color-secondary);
+}
+
+.heading {
+  max-width: 1400px;
+  margin: 0 auto 3.5rem;
+}
+
+.introduction {
+  max-width: 580px;
+  margin: 1.5rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  line-height: 1.9;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr);
+  align-items: start;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.steps {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0;
+  padding: 0 0 0 3.5rem;
+  list-style: none;
+}
+
+.steps::before {
+  position: absolute;
+  top: 1.6rem;
+  bottom: 1.6rem;
+  left: 1.05rem;
+  width: 1px;
+  background: var(--color-border);
+  content: "";
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stepNumber {
+  position: absolute;
+  top: 0;
+  left: -3.5rem;
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: 1px solid var(--color-primary);
+  border-radius: 50%;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.stepBody h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+}
+
+.stepBody p {
+  margin: 0.35rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  line-height: 1.85;
+}
+
+.requirements {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  background: var(--color-background);
+}
+
+.requirementsTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+}
+
+.requirementsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.requirement {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  color: var(--color-foreground);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.requirementCheck {
+  flex-shrink: 0;
+  display: grid;
+  width: 1.25rem;
+  height: 1.25rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-background);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  align-self: flex-start;
+  min-height: 50px;
+  margin-top: 0.5rem;
+  padding: 0.85rem 1.3rem;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  color: var(--color-background);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.action span {
+  font-size: 1rem;
+  transition: transform var(--transition-fast);
+}
+
+.action:hover {
+  border-color: var(--color-foreground);
+  background: var(--color-foreground);
+}
+
+.action:hover span {
+  transform: translate(3px, -3px);
+}
+
+.action:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3rem;
+  }
+
+  .requirements {
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 600px) {
+  .steps {
+    padding-left: 3rem;
+  }
+
+  .stepNumber {
+    left: -3rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.78rem;
+  }
+
+  .steps::before {
+    left: 0.95rem;
+  }
+
+  .requirements {
+    padding: 1.25rem;
+  }
+
+  .action {
+    align-self: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .action,
+  .action span {
+    transition: none;
+  }
+}

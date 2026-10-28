@@ -1,6 +1,6 @@
-
 import { useEffect, useRef, useState } from "react";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import SmartImage from "../components/SmartImage/SmartImage";
 import styles from "./About.module.css";
 
 const cats = [
@@ -89,34 +89,36 @@ export default function About() {
   return (
     <section className={styles.about} id="sobre" ref={sectionRef}>
       <div className={`${styles.intro} reveal`}>
-        <p className={styles.eyebrow}>
+        <p className="eyebrow">
           <span />
           Um guia sobre o universo felino
         </p>
 
-        <h2 className={styles.title}>
+        <h2 className={`section-title ${styles.title}`}>
           Seu gato faz coisas
           <br />
-          que você não <em className={styles.hand}>entende?</em>
+          que você não <em className="hand">entende?</em>
         </h2>
 
         <p className={styles.introduction}>
-          Por que seu gato se esconde, balança a cauda ou parece mudar de humor de repente? O Gataria ajuda você a interpretar os sinais do comportamento felino, reconhecer possíveis sinais de alerta e entender como respeitar as necessidades do seu companheiro.
+          Por que seu gato se esconde, balança a cauda ou parece mudar de humor
+          de repente? O Gataria ajuda você a interpretar os sinais do
+          comportamento felino, reconhecer possíveis sinais de alerta e
+          entender como respeitar as necessidades do seu companheiro.
         </p>
       </div>
 
       <div className={styles.story}>
         <div className={`${styles.imageColumn} reveal`}>
-          <div className={styles.imageFrame}>
-            <img
-              src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=85"
-              alt="Gato de pelagem alaranjada com o olhar atento"
-              loading="lazy"
-            />
-          </div>
+          <SmartImage
+            className={styles.imageFrame}
+            src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=85"
+            alt="Gato de pelagem alaranjada com o olhar atento"
+          />
 
           <p className={styles.imageCaption}>
-            Orelhas, cauda e postura ajudam a interpretar o comportamento felino.
+            Orelhas, cauda e postura ajudam a interpretar o comportamento
+            felino.
           </p>
         </div>
 
@@ -126,27 +128,27 @@ export default function About() {
           <h3>
             O que seu gato
             <br />
-            está tentando <em className={styles.hand}>dizer?</em>
+            está tentando <em className="hand">dizer?</em>
           </h3>
 
           <p>
             <strong>Orelhas para trás ou achatadas:</strong> podem indicar medo,
-            desconforto ou irritação. Dê espaço, principalmente se o gato também
-            estiver encolhido, rosnando ou tentando se afastar.
+            desconforto ou irritação. Dê espaço, principalmente se o gato
+            também estiver encolhido, rosnando ou tentando se afastar.
           </p>
 
           <p>
-            <strong>Cauda batendo de um lado para o outro:</strong> pode ser sinal
-            de agitação ou irritação, especialmente durante o carinho. Pare por
-            alguns instantes e veja se ele procura sua mão novamente ou prefere
-            ficar sozinho.
+            <strong>Cauda batendo de um lado para o outro:</strong> pode ser
+            sinal de agitação ou irritação, especialmente durante o carinho.
+            Pare por alguns instantes e veja se ele procura sua mão novamente
+            ou prefere ficar sozinho.
           </p>
 
           <p>
-            <strong>Corpo encolhido e escondido:</strong> pode indicar que ele está
-            assustado ou quer evitar contato. Se começar a se esconder muito mais
-            que o habitual, especialmente com mudanças no apetite ou na disposição,
-            procure um veterinário.
+            <strong>Corpo encolhido e escondido:</strong> pode indicar que ele
+            está assustado ou quer evitar contato. Se começar a se esconder
+            muito mais que o habitual, especialmente com mudanças no apetite ou
+            na disposição, procure um veterinário.
           </p>
 
           <p>
@@ -158,7 +160,7 @@ export default function About() {
 
       <div className={`${styles.behaviorSection} reveal`}>
         <div className={styles.behaviorHeading}>
-          <p className={styles.eyebrow}>
+          <p className="eyebrow">
             <span />
             Aprenda a observar
           </p>
@@ -170,7 +172,11 @@ export default function About() {
               key={cat.name}
               className={`${styles.card} ${styles[cat.shape]}`}
             >
-              <img src={cat.image} alt={cat.alt} loading="lazy" />
+              <SmartImage
+                className={styles.cardImage}
+                src={cat.image}
+                alt={cat.alt}
+              />
 
               <span className={styles.cardOverlay} />
 
@@ -262,7 +268,7 @@ export default function About() {
               </svg>
             </button>
 
-            <img
+            <SmartImage
               className={styles.modalImage}
               src={activeCat.image}
               alt={activeCat.alt}

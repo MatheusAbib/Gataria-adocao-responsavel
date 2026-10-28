@@ -1,13 +1,14 @@
-
+import { useLenis } from "./hooks/useLenis";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
-import Breeds from "./sections/Breeds";
+import AdoptionCats from "./sections/AdoptionCats";
+import HowItWorks from "./sections/HowItWorks";
 import Nutrition from "./sections/Nutrition";
-import Adoption from "./sections/Adoption";
 import FAQ from "./sections/FAQ";
-import Footer from "./components/Footer";
-import { useLenis } from "./hooks/useLenis";
+import "./App.css";
 
 export default function App() {
   useLenis();
@@ -19,11 +20,12 @@ export default function App() {
         <Hero />
         <About />
         <Nutrition />
-        <Breeds />
-        <Adoption />
+        <AdoptionCats />
+        <HowItWorks />
         <FAQ />
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

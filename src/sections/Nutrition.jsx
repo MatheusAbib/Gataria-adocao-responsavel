@@ -1,6 +1,6 @@
-
-import { useRef } from "react";
+﻿import { useRef } from "react";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import SmartImage from "../components/SmartImage/SmartImage";
 import styles from "./Nutrition.module.css";
 
 const guidelines = [
@@ -36,15 +36,15 @@ export default function Nutrition() {
       ref={sectionRef}
     >
       <div className={`${styles.heading} reveal`}>
-        <p className={styles.eyebrow}>
+        <p className="eyebrow">
           <span />
           Guia de alimentação felina
         </p>
 
-        <h2>
+        <h2 className="section-title">
           O que vai
           <br />
-          no pote do <em className={styles.hand}>seu gato?</em>
+          no pote do <em className="hand">seu gato?</em>
         </h2>
 
         <p className={styles.introduction}>
@@ -56,10 +56,10 @@ export default function Nutrition() {
 
       <div className={styles.content}>
         <div className={`${styles.visual} reveal`}>
-          <img
+          <SmartImage
+            className={styles.imageFrame}
             src="https://th.bing.com/th/id/R.3e3bb2d74b66caf8a8edd8b2d078d159?rik=kCZUhYpqOdmVUQ&pid=ImgRaw&r=0"
             alt="Gato observando o ambiente"
-            loading="lazy"
           />
 
           <div className={styles.imageLabel}>
@@ -87,8 +87,8 @@ export default function Nutrition() {
             </article>
           ))}
 
-          <div className={`${styles.notice} reveal`}>
-            <span aria-hidden="true">✳</span>
+          <div className={`notice ${styles.notice} reveal`}>
+            <span aria-hidden="true">{"\u2733\uFE0E"}</span>
             <p>
               Filhotes, gatos idosos e animais com doenças podem precisar
               de dietas específicas. Não faça mudanças importantes na
@@ -96,14 +96,14 @@ export default function Nutrition() {
             </p>
           </div>
 
-          <a className={styles.action}
+          <a
+            className={styles.action}
             href="https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feeding-your-cat"
             target="_blank"
             rel="noopener noreferrer"
           >
             Conhecer outras orientações
             <span aria-hidden="true">↗</span>
-
           </a>
         </div>
       </div>

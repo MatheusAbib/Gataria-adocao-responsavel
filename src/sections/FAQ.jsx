@@ -1,5 +1,4 @@
-
-import { useRef, useState } from "react";
+﻿import { useRef, useState } from "react";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import styles from "./FAQ.module.css";
 
@@ -29,6 +28,31 @@ const questions = [
     answer:
       "Escolha um alimento completo e balanceado adequado à idade e às necessidades de saúde do gato. Filhotes, adultos e idosos podem ter necessidades nutricionais diferentes. Mantenha água limpa disponível, controle as porções e não ofereça alimentos tóxicos, como cebola, alho e chocolate. Se o gato precisa perder peso ou tem alguma doença, consulte um médico-veterinário antes de mudar a dieta.",
   },
+  {
+    question: "Preciso pagar para adotar?",
+    answer:
+      "A adoção pela Gataria é gratuita. O que pode haver é uma taxa simbólica de contribuição para cobrir parte dos custos com castração, vacinação e microchipagem, sempre informada antes da adoção. Não cobramos pelo gato em si. Desconfie de qualquer cobrança alta ou de pessoas que vendem animais como se fossem produtos.",
+  },
+  {
+    question: "Posso adotar morando em apartamento?",
+    answer:
+      "Sim, desde que a moradia seja telada. Apartamentos telados são seguros para gatos e evitam quedas e fugas. Também é importante oferecer enriquecimento ambiental (arranhadores, prateleiras, brinquedos e janelas com vista) para que o gato tenha estímulo e bem-estar. O tamanho do imóvel importa menos do que a segurança e o cuidado.",
+  },
+  {
+    question: "O gato vem castrado e vacinado?",
+    answer:
+      "Sim. Todos os gatos disponíveis para adoção são castrados, vacinados e vermifugados antes de irem para o novo lar. A castração é obrigatória e faz parte do compromisso com o controle populacional e a saúde do animal. Também orientamos sobre o calendário de reforço das vacinas após a adoção.",
+  },
+  {
+    question: "Como funciona o acompanhamento pós-adoção?",
+    answer:
+      "Após a adoção, mantemos contato periódico para saber como o gato está se adaptando, tirar dúvidas e oferecer orientação. O acompanhamento é uma forma de garantir o bem-estar do animal e apoiar o tutor nos primeiros meses, que costumam ser os mais desafiadores. Se houver qualquer dificuldade, estamos disponíveis para ajudar.",
+  },
+  {
+    question: "Posso devolver o gato se não me adaptar?",
+    answer:
+      "A devolução é possível, mas deve ser o último recurso. Antes disso, converse com a gente: muitas dificuldades de adaptação podem ser resolvidas com ajustes no ambiente, na rotina ou com orientação veterinária. A adoção é um compromisso de longo prazo, e nosso objetivo é que o gato permaneça em um lar seguro e amoroso.",
+  },
 ];
 
 export default function FAQ() {
@@ -44,15 +68,15 @@ export default function FAQ() {
       ref={sectionRef}
     >
       <div className={`${styles.heading} reveal`}>
-        <p className={styles.eyebrow}>
+        <p className="eyebrow">
           <span />
           Dúvidas sobre gatos
         </p>
 
-        <h2>
+        <h2 className="section-title">
           Cuidados e respostas
           <br />
-          para a vida com seu <em className={styles.hand}>gato.</em>
+          para a vida com seu <em className="hand">gato.</em>
         </h2>
 
         <p className={styles.introduction}>
@@ -103,14 +127,14 @@ export default function FAQ() {
         })}
       </div>
 
-      <div className={`${styles.bottomNote} reveal`}>
-        <span aria-hidden="true">✳</span>
+      <div className={`notice ${styles.bottomNote} reveal`}>
+        <span aria-hidden="true">{"\u2733\uFE0E"}</span>
         <p>
           Dificuldade para urinar, falta de ar ou suspeita de intoxicação
           exigem atendimento veterinário imediato.
         </p>
-        <a href="#sobre">
-          Explorar comportamento felino <span aria-hidden="true">↗</span>
+        <a href="#adocao">
+          Ver gatos disponíveis <span aria-hidden="true">↗</span>
         </a>
       </div>
     </section>

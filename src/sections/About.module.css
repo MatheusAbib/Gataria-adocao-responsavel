@@ -1,5 +1,6 @@
-
 .about {
+  --sm-bg: var(--color-secondary);
+
   padding: var(--section-spacing) var(--page-gutter);
   overflow: hidden;
   background: var(--color-surface);
@@ -11,41 +12,9 @@
   text-align: center;
 }
 
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  margin: 0 0 1.5rem;
-  color: var(--color-primary);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
 .title {
-  margin: 0;
-  font-family: var(--font-display);
   font-size: clamp(3.2rem, 6.7vw, 6.6rem);
-  font-weight: 400;
   letter-spacing: -0.065em;
-  line-height: 0.98;
-}
-
-.title em,
-.textColumn h3 em,
-.behaviorHeading h3 em {
-  color: var(--color-primary);
-  font-weight: 400;
-  font-style: normal;
-}
-
-.hand {
-  font-family: var(--hand);
-  font-size: 1.12em;
-  font-weight: 600;
-  font-style: normal;
-  letter-spacing: -0.045em;
-  line-height: 0.9;
 }
 
 .introduction {
@@ -60,30 +29,28 @@
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
   align-items: center;
-  gap: clamp(3rem, 0vw, 9rem);
+  gap: clamp(0rem, 0vw, 9rem);
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .imageColumn {
   width: 100%;
-  max-width: 480px;
+  max-width: 510px;
 }
 
 .imageFrame {
-  position: relative;
+  width: 100%;
   aspect-ratio: 0.82;
-  overflow: hidden;
   border-radius: 48% 48% 0.4rem 0.4rem;
-  background: var(--color-secondary);
 }
 
 .imageFrame img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   transition: transform 1s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.imageColumn:hover .imageFrame img {
+  transform: scale(1.04);
 }
 
 .imageCaption {
@@ -95,7 +62,7 @@
 }
 
 .textColumn {
-  max-width: 580px;
+  max-width: 100%;
   padding: 1rem 0;
 }
 
@@ -131,21 +98,6 @@
   font-weight: 600;
 }
 
-.signature {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-top: 2.5rem;
-  color: var(--color-muted);
-  font-size: 0.75rem;
-}
-
-.signatureSymbol {
-  flex: 0 0 auto;
-  color: var(--color-primary);
-  font-size: 1.5rem;
-}
-
 .behaviorSection {
   max-width: 1400px;
   margin: clamp(6rem, 11vw, 6rem) auto 0;
@@ -163,13 +115,6 @@
 .behaviorHeading h3 {
   margin-bottom: 1.25rem;
   font-size: clamp(2.8rem, 5.5vw, 5rem);
-}
-
-.behaviorHeading > p:last-child {
-  max-width: 520px;
-  color: var(--color-muted);
-  font-size: 0.7rem;
-  line-height: 0.1;
 }
 
 .galleryGrid {
@@ -196,12 +141,12 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.card img {
+.cardImage {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+}
+
+.cardImage img {
   transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -287,7 +232,7 @@
   align-items: flex-start;
   justify-content: flex-end;
   gap: 0.85rem;
-  padding: clamp(1rem, 2vw, 1.7rem);
+  padding: clamp(1rem, 2vw, 1rem);
   overflow-y: auto;
   background: rgba(32, 37, 30, 0.93);
   opacity: 0;
@@ -314,12 +259,6 @@
   color: rgba(255, 255, 255, 0.88);
   font-size: clamp(0.76rem, 1vw, 0.88rem);
   line-height: 1.75;
-}
-
-.explanationHint {
-  margin-top: 0.25rem;
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 0.65rem;
 }
 
 .card:focus-visible {
@@ -391,11 +330,8 @@
 }
 
 .modalImage {
-  display: block;
   width: 100%;
   height: clamp(190px, 32vh, 280px);
-  object-fit: cover;
-  background: var(--color-surface);
 }
 
 .modalContent {
@@ -456,8 +392,8 @@
     transform: scale(1.04);
   }
 
-  .card:hover img,
-  .card:focus-visible img {
+  .card:hover .cardImage img,
+  .card:focus-visible .cardImage img {
     transform: scale(1.06);
   }
 
@@ -546,14 +482,14 @@
     cursor: default;
   }
 
-  .card img {
+  .cardImage {
     position: relative;
     inset: auto;
-    display: block;
-    width: 100%;
     height: clamp(140px, 28vw, 220px);
     flex: 0 0 auto;
-    object-fit: cover;
+  }
+
+  .cardImage img {
     transform: none;
   }
 
@@ -653,7 +589,7 @@
     gap: 0.5rem;
   }
 
-  .card img {
+  .cardImage {
     height: clamp(125px, 34vw, 175px);
   }
 
@@ -706,28 +642,12 @@
     grid-template-rows: auto;
   }
 
-  .card img {
+  .cardImage {
     height: 190px;
   }
 
   .explanationText {
     font-size: 0.88rem;
     line-height: 1.7;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .imageFrame img,
-  .card img,
-  .cardArrow,
-  .cardExplanation,
-  .cardInfo,
-  .cardIndex,
-  .modalBackdrop,
-  .modal,
-  .modalClose,
-  .eyeButton {
-    transition: none;
-    animation: none;
   }
 }

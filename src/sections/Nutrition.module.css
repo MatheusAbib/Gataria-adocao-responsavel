@@ -1,5 +1,6 @@
-
 .nutrition {
+  --sm-bg: var(--color-surface);
+
   padding: var(--section-spacing) var(--page-gutter);
   background: var(--color-surface);
 }
@@ -9,46 +10,9 @@
   margin: 0 auto 3.5rem;
 }
 
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  margin: 0 0 1.4rem;
-  color: var(--color-primary);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-}
-
-.eyebrow span {
-  width: 1.8rem;
-  height: 1px;
-  background: var(--color-primary);
-}
-
 .heading h2 {
-  margin: 0;
-  font-family: var(--font-display);
   font-size: clamp(3.2rem, 7vw, 6rem);
-  font-weight: 400;
   letter-spacing: -0.075em;
-  line-height: 0.98;
-}
-
-.heading h2 em {
-  color: var(--color-primary);
-  font-weight: 400;
-  font-style: normal;
-}
-
-.hand {
-  font-family: var(--hand);
-  font-size: 1.12em;
-  font-weight: 600;
-  font-style: normal;
-  letter-spacing: -0.045em;
-  line-height: 0.9;
 }
 
 .introduction {
@@ -73,11 +37,10 @@
   min-width: 0;
 }
 
-.visual > img {
+.imageFrame {
   width: 100%;
   aspect-ratio: 0.95;
   border-radius: var(--radius-medium);
-  object-fit: cover;
 }
 
 .imageLabel {
@@ -157,25 +120,7 @@
 }
 
 .notice {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.9rem;
-  margin-top: 1.8rem;
-  padding: 1.2rem;
-  border-radius: var(--radius-medium);
   background: rgba(83, 103, 73, 0.08);
-}
-
-.notice > span {
-  color: var(--color-primary);
-  font-size: 1.2rem;
-}
-
-.notice p {
-  margin: 0;
-  color: var(--color-muted);
-  font-size: 0.77rem;
-  line-height: 1.8;
 }
 
 .action {
@@ -198,20 +143,17 @@
 }
 
 .action span {
-  border-color: var(--color-foreground);
   display: inline-block;
   transition: transform var(--transition-base);
 }
 
-.action:hover{
+.action:hover {
   background: var(--color-foreground);
 }
 
 .action:hover span {
   transform: translate(3px, -3px);
 }
-
-
 
 @media (max-width: 850px) {
   .content {
@@ -221,10 +163,6 @@
 
   .visual {
     display: none;
-  }
-
-  .visual > img {
-    aspect-ratio: 1;
   }
 
   .imageLabel {
@@ -254,11 +192,5 @@
   .action {
     width: 100%;
     gap: 0.7rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .action {
-    transition: none;
   }
 }

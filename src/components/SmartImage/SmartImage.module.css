@@ -1,5 +1,7 @@
-
 .wrapper {
+  --sm-bg: #eeeae5;
+  --sm-fg: #8d8175;
+
   position: relative;
   display: block;
   width: 100%;
@@ -12,7 +14,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: inherit;
+  object-fit: cover;
   opacity: 0;
   transition: opacity 300ms ease;
 }
@@ -21,12 +23,16 @@
   opacity: 1;
 }
 
-.skeleton {
+.skeleton,
+.fallback {
   position: absolute;
   inset: 0;
+  background: var(--sm-bg);
+}
+
+.skeleton {
   z-index: 1;
   overflow: hidden;
-  background: #eeeae5;
 }
 
 .skeleton::after {
@@ -45,11 +51,8 @@
 
 .fallback {
   display: grid;
-  width: 100%;
-  height: 100%;
   place-items: center;
-  background: #eeeae5;
-  color: #8d8175;
+  color: var(--sm-fg);
   font-size: 2rem;
 }
 

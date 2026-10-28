@@ -4,8 +4,8 @@ import styles from "./Header.module.css";
 const links = [
   { label: "Comportamentos", href: "#sobre" },
   { label: "Alimentação", href: "#alimentacao" },
-  { label: "Raças", href: "#racas" },
   { label: "Adoção", href: "#adocao" },
+  { label: "Como funciona", href: "#como-funciona" },
   { label: "Dúvidas", href: "#duvidas" },
 ];
 
@@ -70,7 +70,7 @@ export default function Header() {
       <a
         className={styles.logo}
         href="#inicio"
-        aria-label="Gataria — página inicial"
+        aria-label="Gataria — Adoção Responsável"
         onClick={closeMenu}
       >
         <img
@@ -78,8 +78,13 @@ export default function Header() {
           src={`${import.meta.env.BASE_URL}favicon.svg`}
           alt=""
         />
+
         <span className={styles.logoText}>
           gataria<span className={styles.logoDot}>.</span>
+        </span>
+
+        <span className={styles.logoTagline} aria-hidden="true">
+          Adoção Responsável
         </span>
       </a>
 
@@ -120,4 +125,3 @@ export default function Header() {
     </header>
   );
 }
-

@@ -1,6 +1,6 @@
-﻿
-import { useEffect, useRef } from "react";
+﻿import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import SmartImage from "../components/SmartImage/SmartImage";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -65,15 +65,15 @@ export default function Hero() {
   return (
     <section className={styles.hero} id="inicio" ref={heroRef}>
       <div className={styles.content}>
-        <p className={styles.eyebrow}>
-          <span className={styles.eyebrowLine} />
+        <p className={`eyebrow ${styles.eyebrow}`}>
+          <span />
           Adoção responsável, cuidado e conexão
         </p>
 
-        <h1 className={styles.title}>
+        <h1 className={`section-title ${styles.title}`}>
           <span className={styles.titleLine}>Encontre seu</span>
           <span className={styles.titleLine}>
-            novo <em className={styles.hand}>companheiro.</em>
+            novo <em className="hand">companheiro.</em>
           </span>
         </h1>
 
@@ -96,7 +96,7 @@ export default function Hero() {
         </div>
 
         <div className={styles.note}>
-          <span className={styles.noteSymbol} aria-hidden="true">✳</span>
+          <span className={styles.noteSymbol} aria-hidden="true">{"\u2733\uFE0E"}</span>
           <p>
             Uma adoção consciente,
             <br />
@@ -106,21 +106,13 @@ export default function Hero() {
       </div>
 
       <div className={styles.visual}>
-        <div className={styles.imageFrame}>
-          <div className={styles.imageSkeleton} aria-hidden="true" />
-          <img
-            className={styles.mainImage}
-            src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=1200&q=85"
-            alt="Gato observando atentamente o ambiente"
-            fetchPriority="high"
-            onLoad={(event) =>
-              event.currentTarget.classList.add(styles.imageLoaded)
-            }
-            onError={(event) => {
-              event.currentTarget.style.display = "none";
-            }}
-          />
-        </div>
+        <SmartImage
+          className={styles.imageFrame}
+          src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=1200&q=85"
+          alt="Gato observando atentamente o ambiente"
+          loading="eager"
+          fetchPriority="high"
+        />
 
         <div className={styles.imageCaption}>
           <span>Conheça melhor quem vive com você</span>
