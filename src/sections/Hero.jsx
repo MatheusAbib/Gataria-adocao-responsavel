@@ -85,12 +85,12 @@ export default function Hero() {
 
         <div className={styles.actions}>
           <a className={styles.primaryAction} href="#adocao">
-            Encontrar meu gato
+            Adotar um gato
             <span aria-hidden="true">↗</span>
           </a>
 
           <a className={styles.secondaryAction} href="#sobre">
-            Preparar-me para adotar
+            Aprender sobre gatos
             <span aria-hidden="true">↗</span>
           </a>
         </div>
