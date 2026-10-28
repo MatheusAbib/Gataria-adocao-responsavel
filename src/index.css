@@ -137,6 +137,7 @@ section[id] {
 .moradia-dropdown-panel {
   z-index: 1300 !important;
 }
+
 ::selection {
   color: var(--color-background);
   background: var(--color-primary);
@@ -198,6 +199,29 @@ section[id] {
   color: var(--color-muted);
   font-size: 0.8rem;
   line-height: 1.8;
+}
+
+[class*="_header_"] {
+  -webkit-backdrop-filter: blur(8px) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+[class*="_backdrop_"],
+[class*="_formBackdrop_"],
+[class*="_modalBackdrop_"] {
+  -webkit-backdrop-filter: blur(8px) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+[class*="_number_"],
+[class*="_statusBadge_"] {
+  -webkit-backdrop-filter: blur(8px) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+[class*="_stepNumber_"] {
+  -webkit-backdrop-filter: blur(20px) !important;
+  backdrop-filter: blur(20px) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
