@@ -33,7 +33,7 @@ const requirements = [
   "Ser maior de 18 anos",
   "Moradia telada (janelas e varandas)",
   "Termo de adoção assinado",
-  "Castração obrigatória (feita pela ONG)",
+  "Castração obrigatória (feita pela Gataria)",
   "Acompanhamento pós-adoção",
 ];
 
