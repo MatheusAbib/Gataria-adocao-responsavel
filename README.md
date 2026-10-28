@@ -1,4 +1,4 @@
-# <svg width="32" height="32" viewBox="0 0 576 512" fill="currentColor" style="vertical-align: middle;"><path d="M96 160c53 0 96 43 96 96v85.8c29.7-44.7 77.8-76.2 133.4-84c25.6 60 85.2 102.1 154.6 102.1c10.9 0 21.6-1.1 32-3.1V544c0 17.7-14.3 32-32 32s-32-14.3-32-32V403.2L312 512h56c17.7 0 32 14.3 32 32s-14.3 32-32 32H224c-53 0-96-43-96-96V256c0-16.6-12.6-30.2-28.7-31.8l-6.6-.3C76.6 222.2 64 208.6 64 192c0-17.7 14.3-32 32-32m469.8-92.8c10.4-8.7 26.2-1.3 26.2 12.3V192c0 61.9-50.1 112-112 112s-112-50.1-112-112V79.5c0-13.6 15.8-21 26.2-12.3L448 112h64zM432 172c-11 0-20 9-20 20s9 20 20 20s20-9 20-20s-9-20-20-20m96 0c-11 0-20 9-20 20s9 20 20 20s20-9 20-20s-9-20-20-20"/></svg> Gataria — Adoção Responsável
+# Gataria — Adoção Responsável
 
 O Gataria é uma plataforma web dedicada à **adoção responsável de gatos**. O site conecta gatos que esperam por um lar a pessoas dispostas a oferecer um ambiente seguro, preparado e amoroso.
 

@@ -636,11 +636,6 @@
 }
 
 @media (max-width: 420px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
   .imageFrame {
     aspect-ratio: 1;
   }
@@ -663,6 +658,13 @@
     width: 40px;
     height: 40px;
   }
+}
+
+@media (max-width: 380px){
+      ._grid{
+        grid-template-columns: 1fr;
+        gap: 2rem; 
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
