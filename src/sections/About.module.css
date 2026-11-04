@@ -266,10 +266,6 @@
   outline-offset: 4px;
 }
 
-.card.landscape {
-  border-radius: 0.35rem;
-}
-
 .eyeButton {
   display: none;
 }
@@ -460,7 +456,7 @@
   }
 
   .behaviorSection {
-    margin-top: 6rem;
+    margin-top: 4rem;
   }
 
   .galleryGrid {

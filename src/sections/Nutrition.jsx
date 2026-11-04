@@ -81,9 +81,6 @@ export default function Nutrition() {
                 <p>{guideline.description}</p>
               </div>
 
-              <span className={styles.symbol} aria-hidden="true">
-                ↗
-              </span>
             </article>
           ))}
 
