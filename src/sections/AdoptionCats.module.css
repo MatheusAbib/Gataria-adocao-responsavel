@@ -641,9 +641,9 @@
   }
 
   .openButton{
-right: 0.5rem;
-bottom: 0.5rem; 
-font-size: 0.65rem;
+    right: 0.5rem;
+    bottom: 0.5rem; 
+    font-size: 0.65rem;
     padding: 0.4rem 0.8rem;
  }
 

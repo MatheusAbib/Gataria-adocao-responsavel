@@ -8,42 +8,42 @@ const cats = [
     name: "Irritado ou assustado?",
     category: "Sinais de desconforto",
     description:
-      "Orelhas achatadas, corpo tenso e cauda batendo com força podem indicar medo ou irritação. Evite tocar nele e dê espaço para se acalmar.",
+      "Orelhas achatadas, corpo tenso e cauda batendo com força indicam medo ou irritação. Evite tocá-lo pois ele pode reagir de forma defensiva. Dê espaço e permita que se acalme sozinho, em um ambiente seguro e silencioso.",
     image:
       "https://br.cats.com/wp-content/uploads/2022/07/Their-Ears-Are-Back.jpg",
     alt: "Gato com as orelhas voltadas para trás",
     shape: "arched",
   },
-  {
-    name: "Relaxado e confortável",
-    category: "Sinais de bem-estar",
-    description:
-      "Corpo solto, olhos semicerrados e postura tranquila costumam indicar conforto. Observe também se ele se aproxima espontaneamente e parece à vontade no ambiente.",
-    image:
-      "https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=1000&q=85",
-    alt: "Gato descansando em uma posição confortável",
-    shape: "oval",
-  },
-  {
-    name: "Desconfortável ou reservado",
-    category: "Respeite o espaço dele",
-    description:
-      "Esconder-se, afastar-se ou evitar contato pode indicar medo ou estresse, mas alguns gatos também preferem ficar sozinhos. Não force a interação e ofereça um esconderijo seguro.",
-    image:
-      "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=1000&q=85",
-    alt: "Gato observando o ambiente com cautela",
-    shape: "sculpted",
-  },
-  {
-    name: "Pode estar doente?",
-    category: "Sinais de alerta",
-    description:
-      "Apatia, perda de apetite e mudanças repentinas de comportamento merecem atenção veterinária. Se o gato tentar urinar e não conseguir, procure atendimento de emergência.",
-    image:
-      "https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=1000&q=85",
-    alt: "Gato em um retrato para ilustrar a observação de sinais de saúde",
-    shape: "landscape",
-  },
+{
+  name: "Relaxado e confortável",
+  category: "Sinais de bem-estar",
+  description:
+    "Corpo solto, olhos semicerrados e postura tranquila costumam indicar conforto e segurança. Se ele se aproxima de você espontaneamente e explora o ambiente sem tensão, é um bom sinal de que se sente à vontade.",
+  image:
+    "https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=1000&q=85",
+  alt: "Gato descansando em uma posição confortável",
+  shape: "oval",
+},
+{
+  name: "Desconfortável ou reservado",
+  category: "Respeite o espaço dele",
+  description:
+    "Esconder-se, afastar-se ou evitar contato pode indicar medo ou estresse, mas alguns gatos simplesmente preferem ficar sozinhos. Não force a interação: ofereça um esconderijo seguro e deixe que ele se aproxime quando se sentir pronto.",
+  image:
+    "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=1000&q=85",
+  alt: "Gato observando o ambiente com cautela",
+  shape: "sculpted",
+},
+{
+  name: "Pode estar doente?",
+  category: "Sinais de alerta",
+  description:
+    "Apatia, perda de apetite e mudanças repentinas de comportamento merecem atenção veterinária. Fique atento também a sinais de dor ao urinar: se o gato tentar e não conseguir, procure atendimento de emergência imediatamente.",
+  image:
+    "https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=1000&q=85",
+  alt: "Gato em um retrato para ilustrar a observação de sinais de saúde",
+  shape: "landscape",
+},
 ];
 
 export default function About() {
@@ -166,9 +166,10 @@ export default function About() {
           </p>
         </div>
 
-        <div className={styles.galleryGrid}>
+        <div className={styles.galleryGrid} >
           {cats.map((cat, index) => (
-            <article
+            <article 
+              onClick={(event) => openModal(event, cat)}
               key={cat.name}
               className={`${styles.card} ${styles[cat.shape]}`}
             >
