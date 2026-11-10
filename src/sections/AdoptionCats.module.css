@@ -630,15 +630,29 @@
     height: 40px;
   }
 
+  .number{
+    display: none !important;
+  }
+
+  .statusBadge{
+    top: 0.5rem;
+    right: 0.5rem;
+        font-size: 0.5rem;
+  }
+
+  .openButton{
+right: 0.5rem;
+bottom: 0.5rem; 
+font-size: 0.65rem;
+    padding: 0.4rem 0.8rem;
+ }
+
   .note {
     margin-top: 3rem;
   }
 }
 
 @media (max-width: 420px) {
-  .imageFrame {
-    aspect-ratio: 1;
-  }
 
   .cardTitle {
     font-size: 1.8rem;

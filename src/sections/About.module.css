@@ -331,7 +331,7 @@
 }
 
 .modalContent {
-  padding: clamp(1.35rem, 5vw, 2rem);
+  padding: 1.35rem 1rem;
 }
 
 .modalCategory {
@@ -620,7 +620,7 @@
   }
 
   .modalBackdrop {
-    padding: 1rem;
+    padding: 0.5rem;
   }
 
   .modal {
